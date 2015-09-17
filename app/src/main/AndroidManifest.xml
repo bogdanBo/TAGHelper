@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TAGsList"
+            android:label="@string/title_activity_tags_list"
+            android:parentActivityName=".Principal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.paradarum.taghelper.taghelper.Principal" />
+        </activity>
     </application>
 
 </manifest>
