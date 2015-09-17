@@ -1,9 +1,12 @@
 package com.paradarum.taghelper.taghelper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Principal extends AppCompatActivity {
 
@@ -11,6 +14,20 @@ public class Principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+        Button a = (Button) findViewById(R.id.butFace);
+        Button b = (Button) findViewById(R.id.butInstagram);
+        Button c = (Button) findViewById(R.id.butOtros);
+        Button d = (Button) findViewById(R.id.butTwitter);
+        final Principal this2=this;
+
+        d.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(this2,TAGsList.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

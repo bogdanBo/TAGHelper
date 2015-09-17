@@ -4,13 +4,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.MultiAutoCompleteTextView;
 
 public class TAGsList extends AppCompatActivity {
+
+    MultiAutoCompleteTextView text1;
+    String[] languages={"Android ","java","IOS","SQL","JDBC","Web services"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tags_list);
+
+        text1=(MultiAutoCompleteTextView)findViewById(R.id.multiAutoCompleteTextView);
+
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,languages);
+
+        text1.setAdapter(adapter);
+        text1.setTokenizer(new SpaceToquenizer());
     }
 
     @Override
