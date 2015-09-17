@@ -23,6 +23,8 @@ public class TAGsList extends AppCompatActivity {
 
         text1.setAdapter(adapter);
         text1.setTokenizer(new SpaceToquenizer());
+
+        ///Prueba subir y q este todo bien!!!!
     }
 
     @Override
