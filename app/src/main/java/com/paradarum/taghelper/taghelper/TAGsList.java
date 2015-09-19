@@ -1,10 +1,16 @@
 package com.paradarum.taghelper.taghelper;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 
 public class TAGsList extends AppCompatActivity {
@@ -19,12 +25,44 @@ public class TAGsList extends AppCompatActivity {
 
         text1=(MultiAutoCompleteTextView)findViewById(R.id.multiAutoCompleteTextView);
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,languages);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,languages);
 
         text1.setAdapter(adapter);
         text1.setTokenizer(new SpaceToquenizer());
+        text1.setThreshold(1);
 
-        ///Prueba subir y q este todo bien!!!!
+
+
+        final EditText msg = (EditText) findViewById(R.id.message);
+        msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+
+        msg.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // TODO Auto-generated method stub
+
+                if (msg.getText().toString().equalsIgnoreCase("android"))
+                    msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.ic_launcher , 0);
+                else
+                    msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+
     }
 
     @Override
