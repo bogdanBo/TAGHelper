@@ -30,10 +30,6 @@ public class TAGsList extends AppCompatActivity {
         text1.setAdapter(adapter);
         text1.setTokenizer(new SpaceToquenizer());
         text1.setThreshold(1);
-
-
-
-
     }
 
     @Override
