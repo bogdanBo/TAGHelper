@@ -33,35 +33,6 @@ public class TAGsList extends AppCompatActivity {
 
 
 
-        final EditText msg = (EditText) findViewById(R.id.message);
-        msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-
-        msg.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // TODO Auto-generated method stub
-
-                if (msg.getText().toString().equalsIgnoreCase("android"))
-                    msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.ic_launcher , 0);
-                else
-                    msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-
 
     }
 
