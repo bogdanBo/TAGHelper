@@ -4,6 +4,7 @@ import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.MultiAutoCompleteTextView;
 
@@ -48,11 +49,14 @@ public class SpaceToquenizer implements MultiAutoCompleteTextView.Tokenizer {
             return text;
         } else {
             if (text instanceof Spanned) {
-                SpannableString sp = new SpannableString(text + " ?");
+                Log.i("xxx", "aki");
+                SpannableString sp = new SpannableString(text + " ");
                 TextUtils.copySpansFrom((Spanned) text, 0, text.length(),
                         Object.class, sp, 0);
+
                 return sp;
             } else {
+                Log.i("xxx", "aki22"+text);
                 return text + " ";
             }
         }
